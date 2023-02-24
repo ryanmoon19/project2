@@ -7,16 +7,30 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>index page</h1>
+    <h1>Monopoly</h1>
     <ul>
         <% for(let i =0; i < monopoly.length; i++){ %>
-            <li>
+            <div class="cardText">
                 <a href="/monopoly/<%= monopoly[i]._id%>">
                     <button>
                     <%=monopoly[i].name%>
                   </button>
                   </a>
-            </li>
+                  <p>piece</p>
+                  <p>money</p>
+                  <p>properties</p>
+                  <p><%=monopoly[i].properties</p>
+                  <ul>
+                  <% for(let j =0; j < monopoly.properties.length; j++){ %>
+                        <li>
+                            <%=monopoly.properties.property[j].propName%>
+                        </li>
+                    <%}%>
+                    </ul>
+            </div>
+            <div class="editBtn">
+                
+            </div>
         <% } %>
     </ul>
 </body>
