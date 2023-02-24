@@ -1,8 +1,8 @@
 const mongoose = require('mongoose');
 
 const monopolySchema = new mongoose.Schema({
-	name: { String, required: true },
-	piece: { String, required: true },
+	name: { String, },
+	piece: { String,  },
 	money: { Number, default: 0 },
 	properties: [{ property: { propName: String, value: Number } }],
 });

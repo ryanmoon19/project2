@@ -54,7 +54,7 @@ app.put('/monopoly/:id', (req, res) => {
 
 // DELETE ROUTE
 app.delete('/monopoly/:id', (req, res) => {
-    monopolychema.findByIdAndDelete(req.params.id, (err, deletedMonopoly) => {
+    monopolySchema.findByIdAndDelete(req.params.id, (err, deletedMonopoly) => {
         if(err){
             console.log(err)
         }else{
@@ -73,9 +73,9 @@ app.get('/monopoly/seed', (req, res) => {
 
 
 // connection to mongodb
-mongoose.set("strictQuery", true);
-mongoose.connect(process.env.MONGODB, ()=>{
-    console.log("connection with mongodb is established...")
+mongoose.set('strictQuery', false);
+mongoose.connect(process.env.MONGODB, () => {
+    console.log('The connection with mongod is established');
 })
 
 // LISTENER
