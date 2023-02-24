@@ -1,9 +1,9 @@
 const mongoose = require('mongoose');
 
 const monopolySchema = new mongoose.Schema({
-	name: { String, required: true },
-	piece: { String, required: true },
-	money: { Number, default: 0 },
+	name: { type: String, required: true },
+	piece: { type: String, required: true },
+	money: { type: Number, default: 0 },
 	properties: [{
         property: { 
             propName: String,
@@ -12,6 +12,6 @@ const monopolySchema = new mongoose.Schema({
     }],
 });
 
-const Monopoly = mongoose.model('Monopoly', monopolySchema);
+const Monopoly = mongoose.model('monopolySchema', monopolySchema);
 
 module.exports = Monopoly;
