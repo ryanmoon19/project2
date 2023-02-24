@@ -12,19 +12,21 @@
         <ul>
             <% for( let i = 0; i < monopoly.properties.length; i++ ) { %>
                 <li>
-                    <%= monopoly.properties[i]%>
+                    <%= monopoly.properties[i].property.propName%>
                 </li>
             <% } %>
         </ul>
         Add New Properties:
         <% for( let i = 0; i < propertyList.length; i++ ) { %>
             <% if(!(propertyList[i].isPurchased)) { %>
-                <button onclick="javascript: (function() {propertyList[i].isPurchased = true})">
-                    <%= propertyList[i].name %>
+                <button onclick="javascript: (function() {
+                    propertyList[i].isPurchased = true;
+                    monopoly.properties.push(property.propertyList[i])
+                    })">
+                    <%= propertyList[i].propName %>
                 </button>
             <% } %>
         <% } %>
-        <a href="/monopoly/<%=monopoly["_id"] %>/add-prop">Add Property</a>
     <br/>
     <input type="submit" name="" value="Submit Changes"/>
     </form>

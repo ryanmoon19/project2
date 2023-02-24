@@ -16,10 +16,9 @@
                     <%=monopoly[i].name%>
                 </button>
                 </a>
-                <p>piece</p>
-                <p>money</p>
-                <p>properties</p>
-                <% if(monopoly[i].properties !== null)  { %>
+                <p>Piece: <%=monopoly[i].piece%></p>
+                <p>Money: <%=monopoly[i].money%></p>
+                <p>Properties :</p>
                 <ul>
                 <% for(let j =0; j < monopoly[i].properties.length; j++){ %>
                         <li>
@@ -27,7 +26,7 @@
                         </li>
                     <%}%>
                     </ul>
-                <% } %>
+                    <a href="/monopoly/<%=monopoly[i]["_id"] %>/edit">Edit</a>
             </div>
             <div class="editBtn">
                 

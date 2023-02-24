@@ -5,10 +5,7 @@ const monopolySchema = new mongoose.Schema({
 	piece: { type: String, required: true },
 	money: { type: Number, default: 0 },
 	properties: [{
-        property: { 
-            propName: String,
-            value: Number
-        }
+        property: { type: Object }
     }],
 });
 
