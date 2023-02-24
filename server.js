@@ -6,11 +6,19 @@ const methodOverride = require('method-override')
 require('dotenv').config();
 const monopolySchema = require('./models/monopolySchema.js')
 const monopolyData = require('./models/monopolyData.js');
+const propertiesData = require('./models/propertiesData.js');
 
 
 
 // MIDDLEWARE
 app.use(methodOverride('_method'))
+
+// SEED ROUTE
+app.get('/monopoly/seed', (req, res) => {
+    monopolySchema.create(monopolyData, (err, seededMonopoly) =>{
+        res.send(seededMonopoly)
+    })
+})
 
 // INDEX ROUTE
 app.get('/monopoly', (req, res) => {
@@ -34,7 +42,7 @@ app.get('/monopoly/:id', (req, res) => {
 // EDIT ROUTE
 app.get('/monopoly/:id/edit', (req, res) => {
     monopolySchema.findById(req.params.id, (err, editMonopoly) => {
-        res.render('edit.ejs', {monopoly: editMonopoly})
+        res.render('edit.ejs', { monopoly: editMonopoly, propertyList: propertiesData});
     })
 });
 
@@ -54,7 +62,7 @@ app.put('/monopoly/:id', (req, res) => {
 
 // DELETE ROUTE
 app.delete('/monopoly/:id', (req, res) => {
-    monopolychema.findByIdAndDelete(req.params.id, (err, deletedMonopoly) => {
+    monopolySchema.findByIdAndDelete(req.params.id, (err, deletedMonopoly) => {
         if(err){
             console.log(err)
         }else{
@@ -63,13 +71,6 @@ app.delete('/monopoly/:id', (req, res) => {
     })
 });
 
-
-// SEED ROUTE
-app.get('/monopoly/seed', (req, res) => {
-    monopolySchema.create(monopolyData, (err, seededMonopoly) =>{
-        res.send(seededMonopoly)
-    })
-})
 
 
 // connection to mongodb

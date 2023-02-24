@@ -4,35 +4,34 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <title>Monopoly Index Page</title>
+    <title>Document</title>
 </head>
 <body>
-    <h1>MONOPOLY</h1>
-    
-    <!-- player information box -->
-    <div class="playerContainer"> 
-        <%for(let i = 0; i < monopoly.length; i++) { %> 
-        <h3>Name: <%=monopoly[i].name%><h3>
-        <h3>Piece: <%=monopoly[i].piece %></h3>
-        <p>Money: <%=monopoly[i].money %></p>
-        <ul>
-            <h3>Properties: </h3>
-            <li>Name: <%=monopoly[i].properties.property.propName%></li>
-            <li>Value: <%=monopoly[i].properties.property.value%></li>
-        </ul> 
+    <h1>Monopoly</h1>
+    <ul>
+        <% for(let i =0; i < monopoly.length; i++){ %>
+            <div class="cardText">
+                <a href="/monopoly/<%= monopoly[i]._id%>">
+                    <button>
+                    <%=monopoly[i].name%>
+                </button>
+                </a>
+                <p>Piece: <%=monopoly[i].piece%></p>
+                <p>Money: <%=monopoly[i].money%></p>
+                <p>Properties :</p>
+                <ul>
+                <% for(let j =0; j < monopoly[i].properties.length; j++){ %>
+                        <li>
+                            <%=monopoly[i].properties[j].property.propName%>
+                        </li>
+                    <%}%>
+                    </ul>
+                    <a href="/monopoly/<%=monopoly[i]["_id"] %>/edit">Edit</a>
+            </div>
+            <div class="editBtn">
+                
+            </div>
         <% } %>
-    </div>
-
-    <!-- Add property (?) -->
-
-
-    <!-- edit player button -->
-    <a href="/monopoly/<%=monopoly[i].id%>/edit">EDIT PLAYER</a>
-
-    <!-- delete button -->
-    <form action="/monopoly/<%=monopoly[i].id%>?_method=DELETE" method="POST">
-        <input type="submit" value="DELETE">
-    </form>
+    </ul>
 </body>
 </html>
