@@ -8,13 +8,6 @@ const monopolySchema = require('./models/monopolySchema.js')
 const monopolyData = require('./models/monopolyData.js');
 
 
-// SEED ROUTE
-app.get('/monopoly/seed', (req, res) => {
-    monopolySchema.create(monopolyData, (err, seededMonopoly) =>{
-        res.send(seededMonopoly)
-    })
-})
-
 
 // MIDDLEWARE
 app.use(methodOverride('_method'))
@@ -71,7 +64,12 @@ app.delete('/monopoly/:id', (req, res) => {
 });
 
 
-
+// SEED ROUTE
+app.get('/monopoly/seed', (req, res) => {
+    monopolySchema.create(monopolyData, (err, seededMonopoly) =>{
+        res.send(seededMonopoly)
+    })
+})
 
 
 // connection to mongodb
