@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include ('./partials/head.ejs') %>
+    <title>Document</title>
+</head>
+<body>
+        <h1>New monopoly Page</h1>
+        <form action="/monopoly" method="POST">
+            Name: <input type="text" name="name" /><br/>
+            Piece: <input type="text" name="piece" /><br/>
+            <!-- id: <input type="text" name="id" /><br/> -->
+            <input type="submit" value="Create monopoly"/>
+        </form>
+</body>
+</html>

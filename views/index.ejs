@@ -14,19 +14,19 @@
                 <a href="/monopoly/<%= monopoly[i]._id%>">
                     <button>
                     <%=monopoly[i].name%>
-                  </button>
-                  </a>
-                  <p>piece</p>
-                  <p>money</p>
-                  <p>properties</p>
-                  <p><%=monopoly[i].properties</p>
-                  <ul>
-                  <% for(let j =0; j < monopoly.properties.length; j++){ %>
+                </button>
+                </a>
+                <p>Piece: <%=monopoly[i].piece%></p>
+                <p>Money: <%=monopoly[i].money%></p>
+                <p>Properties :</p>
+                <ul>
+                <% for(let j =0; j < monopoly[i].properties.length; j++){ %>
                         <li>
-                            <%=monopoly.properties.property[j].propName%>
+                            <%=monopoly[i].properties[j].property.propName%>
                         </li>
                     <%}%>
                     </ul>
+                    <a href="/monopoly/<%=monopoly[i]["_id"] %>/edit">Edit</a>
             </div>
             <div class="editBtn">
                 
