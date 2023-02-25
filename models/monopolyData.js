@@ -10,7 +10,6 @@ module.exports = [
             }
         }],
 	},
-
 	{
 		name: 'Ryan',
 		piece: 'Top Hat',
@@ -22,7 +21,6 @@ module.exports = [
             }
         }],
 	},
-
 	{
 		name: 'Elijah',
 		piece: 'Boot',
