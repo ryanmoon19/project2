@@ -3,12 +3,7 @@ module.exports = [
 		name: 'Max',
 		piece: 'Racecar',
 		money: 1500,
-		properties: [{
-            property: {
-                propName: 'Park Place',
-                value: 400
-            }
-        }],
+		properties: [],
 	},
 
 	{

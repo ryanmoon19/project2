@@ -18,7 +18,10 @@
                 </a>
                 <p>Piece: <%=monopoly[i].piece%></p>
                 <p>Money: <%=monopoly[i].money%></p>
-                <p>Properties :</p>
+                <p>Properties: </p>
+                    <% if (monopoly[i].properties.length === 0) { %>
+                        <p>No Properties</p>
+                    <% } %>
                 <ul>
                 <% for(let j =0; j < monopoly[i].properties.length; j++){ %>
                         <li>
@@ -26,10 +29,11 @@
                         </li>
                     <%}%>
                     </ul>
-                    <a href="/monopoly/<%=monopoly[i]["_id"] %>/edit">Edit</a>
             </div>
             <div class="editBtn">
-                
+                <a href="/monopoly/<%=monopoly[i]["_id"] %>/edit">
+                    <button>Edit</button>
+                </a>
             </div>
         <% } %>
     </ul>
