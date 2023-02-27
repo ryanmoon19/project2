@@ -7,26 +7,23 @@
 <body>
     <form action="/monopoly/<%= monopoly["_id"] %>?_method=PUT" method="POST">
         Name: <input type="text" name="name" value="<%= monopoly.name %>"><br />
-        Piece: <input type="text" name="type" value="<%= monopoly.piece %>"><br />
+        Piece: <input type="text" name="piece" value="<%= monopoly.piece %>"><br />
         Properties: 
         <ul>
-            <% for( let i = 0; i < monopoly.properties.length; i++ ) { %>
+            <% monopoly.properties.map((ownedProp) => { %>
                 <li>
-                    <%= monopoly.properties[i].property.propName%>
+                    <%= ownedProp.propName%>
                 </li>
-            <% } %>
+            <% }) %>
         </ul>
         Add New Properties:
-        <% for( let i = 0; i < propertyList.length; i++ ) { %>
-            <% if(!(propertyList[i].isPurchased)) { %>
-                <button onclick="javascript: (function() {
-                    propertyList[i].isPurchased = true;
-                    monopoly.properties.push(property.propertyList[i])
-                    })">
-                    <%= propertyList[i].propName %>
-                </button>
+        <% propertyList.map((property) => { %>
+            <% if(monopoly.properties.find((prop) => { return prop.propName === property.propName})) { %>
+                <%= property.propName %><input type="checkbox" name="purchase_<%=property.propName%>" checked>
+                <% } else { %>
+                <%= property.propName %><input type="checkbox" name="purchase_<%=property.propName%>">
             <% } %>
-        <% } %>
+        <% }) %>
     <br/>
     <input type="submit" name="" value="Submit Changes"/>
     </form>
