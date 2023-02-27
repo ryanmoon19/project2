@@ -33,6 +33,9 @@
                         Edit
                     </button>
                 </a>
+                <form action="/monopoly/<%=monopoly[i]["_id"]; %>?_method=DELETE" method="POST">
+                    <input type="submit" value="DELETE"/>
+                </form>
             </div>
         <% } %>
     </ul>
