@@ -17,13 +17,21 @@
             <% }) %>
         </ul>
         Add New Properties:
-        <% propertyList.map((property) => { %>
-            <% if(monopoly.properties.find((prop) => { return prop.propName === property.propName})) { %>
-                <%= property.propName %><input type="checkbox" name="purchase_<%=property.propName%>" checked>
+        <div class="properties">
+            <% propertyList.map((property) => { %>
+                <% if(monopoly.properties.find((prop) => { return prop.propName === property.propName})) { %>
+                    <%= property.propName %>
+                    <input type="checkbox" 
+                    name="purchase_<%=property.propName%>" 
+                    class="<% property.color %>" checked>
                 <% } else { %>
-                <%= property.propName %><input type="checkbox" name="purchase_<%=property.propName%>">
-            <% } %>
-        <% }) %>
+                    <%= property.propName %>
+                    <input type="checkbox" 
+                    name="purchase_<%=property.propName%>"
+                    class="<% property.color %>">
+                <% } %>
+            <% }) %>
+        </div>
     <br/>
     <input type="submit" name="" value="Submit Changes"/>
     </form>

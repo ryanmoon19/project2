@@ -9,22 +9,12 @@ module.exports = [
 		name: 'Ryan',
 		piece: 'Top Hat',
 		money: 1500,
-		properties: [
-			{
-				propName: 'Park Place',
-				value: 400,
-			},
-		],
+		properties: [],
 	},
 	{
 		name: 'Elijah',
 		piece: 'Boot',
 		money: 1500,
-		properties: [
-			{
-				propName: 'Park Place',
-				value: 400,
-			},
-		],
+		properties: [],
 	},
 ];

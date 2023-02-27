@@ -9,35 +9,35 @@
 <body>
     <h1>Monopoly</h1>
     <ul>
-        <% for(let i =0; i < monopoly.length; i++){ %>
+        <% monopoly.map((player) => { %>
             <div class="cardText">
-                <a href="/monopoly/<%= monopoly[i]._id%>">
+                <a href="/monopoly/<%= player._id%>">
                     <button>
-                    <%=monopoly[i].name%>
+                    <%=player.name%>
                 </button>
                 </a>
-                <p>Piece: <%=monopoly[i].piece%></p>
-                <p>Money: <%=monopoly[i].money%></p>
+                <p>Piece: <%=player.piece%></p>
+                <p>Money: <%=player.money%></p>
                 <p>Properties :</p>
                 <ul>
-                <% for(let j =0; j < monopoly[i].properties.length; j++){ %>
+                <% player.properties.map((property) => { %>
                         <li>
-                            <%=monopoly[i].properties[j].propName%>
+                            <%= property.propName %>
                         </li>
-                    <%}%>
+                    <% }) %>
                     </ul>
             </div>
             <div class="editBtn">
-                <a href="/monopoly/<%=monopoly[i]["_id"] %>/edit">
+                <a href="/monopoly/<%=player["_id"] %>/edit">
                     <button>
                         Edit
                     </button>
                 </a>
-                <form action="/monopoly/<%=monopoly[i]["_id"]; %>?_method=DELETE" method="POST">
+                <form action="/monopoly/<%=player["_id"]; %>?_method=DELETE" method="POST">
                     <input type="submit" value="DELETE"/>
                 </form>
             </div>
-        <% } %>
+        <% }) %>
     </ul>
 </body>
 </html>
