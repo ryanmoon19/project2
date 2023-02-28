@@ -8,11 +8,13 @@ require('dotenv').config();
 const monopolySchema = require('./models/monopolySchema.js');
 const monopolyData = require('./models/monopolyData.js');
 const propertiesData = require('./models/propertiesData.js');
-app.use(bp.json());
-app.use(bp.urlencoded({ extended: true }));
 
 // MIDDLEWARE
 app.use(methodOverride('_method'));
+app.use(express.static('public/'));
+app.use(bp.json());
+app.use(bp.urlencoded({ extended: true }));
+
 
 // SEED ROUTE
 // app.get('/monopoly/seed', (req, res) => {
