@@ -13,10 +13,15 @@
     <h3>Piece: <%=monopoly.piece%></h3>
     <h4>Money: $<%=monopoly.money%></h4>
     <h4>Properties: </h4>
-    <ul>
-        <li>Property: <%=monopoly.propeties%></li>
-        <li>Value: <%=monopoly.properties.property%></li>
-    </ul>
+    <div>
+        <ul class="prop-list">
+        <% monopoly.properties.map((property) => { %>
+                <li>
+                    <%= property.propName %>
+                </li>
+            <% }) %>
+        </ul>
+    </div>
     </br>
     <button>
         <a href="/monopoly">Back to Home Page</a>
