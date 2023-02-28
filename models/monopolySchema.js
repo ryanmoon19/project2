@@ -10,3 +10,4 @@ const monopolySchema = new mongoose.Schema({
 const Monopoly = mongoose.model('monopolySchema', monopolySchema);
 
 module.exports = Monopoly;
+
