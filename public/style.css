@@ -1,0 +1,40 @@
+.showBody{
+    background: url('https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/i/23f5dbb9-09a4-4c61-be3c-5987d15ea802/d2732cw-0247236d-581b-4d69-aa25-97015ac3c94c.png');
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+}
+
+.showBody h1 {
+    font-family: fantasy;
+    font-size: 80px;
+}
+
+.showDiv {
+    text-align: center;
+    margin-top: 15%;
+    margin-bottom: 15%;
+}
+
+ul {
+    display: flex;
+    flex-direction: column;
+   
+}
+
+button{
+    text-align: center;
+    padding: 10px;
+    border-style: solid;
+    border-color: black;
+    width: 100px;
+}
+
+button a {
+    text-decoration: none;
+    color: black
+}
+
+li{
+    list-style-type: none;
+}
