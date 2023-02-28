@@ -1,8 +1,13 @@
-.showBody{
-    background: url('https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/i/23f5dbb9-09a4-4c61-be3c-5987d15ea802/d2732cw-0247236d-581b-4d69-aa25-97015ac3c94c.png');
+body{
+    background: url('https://i.etsystatic.com/22210572/r/il/fdcb18/2197789392/il_570xN.2197789392_ssge.jpg');
     background-size: cover;
     display: flex;
     flex-direction: column;
+}
+
+.editBody {
+    background: url('https://images-na.ssl-images-amazon.com/images/S/pv-target-images/aa22f7bd40726af6afd9c54799b3cbe996ade4542b502f08f8d64e832f2e18b1._RI_.jpg');
+    background-size: contain;
 }
 
 .showBody h1 {
@@ -41,6 +46,7 @@ li{
 
 .index-container * {
     display: flex;
+    flex-direction: row;
 }
 
 .index-container {
@@ -50,7 +56,9 @@ li{
 }
 
 .index-title {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 5vw;
+    margin-top: 18%;
 }
 
 .players-container {
@@ -74,6 +82,14 @@ li{
 .player-card * {
     font-size: 2vw;
     list-style-type: none;
+}
+
+.newPlayerBtn {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10%;
+    width: 30%;
 }
 
 .name {
