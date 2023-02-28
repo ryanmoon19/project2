@@ -5,11 +5,15 @@
     <title>Document</title>
 </head>
 <body>
-        <h1>New monopoly Page</h1>
+        <h1>Add Player</h1>
+        
         <form action="/monopoly" method="POST">
             Name: <input type="text" name="name" /><br/>
             Piece: <input type="text" name="piece" /><br/>
-            <!-- id: <input type="text" name="id" /><br/> -->
+            Money: <input type="number" name="money"/><br/>
+            Properties
+            Property Name: <input type="text" name="propName"/><br/>
+            <!-- Property Value: <input type="number" name="value"/><br/> -->
             <input type="submit" value="Create monopoly"/>
         </form>
 </body>
