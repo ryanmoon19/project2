@@ -14,11 +14,11 @@ const propertiesData = require('./models/propertiesData.js');
 app.use(methodOverride('_method'))
 
 // SEED ROUTE
-app.get('/monopoly/seed', (req, res) => {
-    monopolySchema.create(monopolyData, (err, seededMonopoly) =>{
-        res.send(seededMonopoly)
-    })
-})
+// app.get('/monopoly/seed', (req, res) => {
+//     monopolySchema.create(monopolyData, (err, seededMonopoly) =>{
+//         res.send(seededMonopoly)
+//     })
+// })
 
 // INDEX ROUTE
 app.get('/monopoly', (req, res) => {
