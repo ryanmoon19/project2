@@ -1,43 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <%- include ('./partials/head.ejs') %>
     <title>Document</title>
 </head>
 <body>
-    <h1>Monopoly</h1>
-    <ul>
+    <div class="index-container">
+    <h1 class="index-title">Monopoly Player Index</h1>
+    <ul class="players-container">
         <% monopoly.map((player) => { %>
-            <div class="cardText">
-                <a href="/monopoly/<%= player._id%>">
-                    <button>
-                    <%=player.name%>
-                </button>
-                </a>
-                <p>Piece: <%=player.piece%></p>
-                <p>Money: <%=player.money%></p>
-                <p>Properties :</p>
-                <ul>
-                <% player.properties.map((property) => { %>
-                        <li>
-                            <%= property.propName %>
-                        </li>
-                    <% }) %>
-                    </ul>
-            </div>
-            <div class="editBtn">
-                <a href="/monopoly/<%=player["_id"] %>/edit">
-                    <button>
-                        Edit
+            <div class="player-card">
+                <div class="name">
+                    <a href="/monopoly/<%= player._id%>" class="name-button">
+                        <button>
+                        <%=player.name%>
                     </button>
-                </a>
-                <form action="/monopoly/<%=player["_id"]; %>?_method=DELETE" method="POST">
-                    <input type="submit" value="DELETE"/>
-                </form>
+                    </a>
+                </div>
+                <p class="piece">Piece: <%=player.piece%></p>
+                <p class="money"> Money: <%=player.money%></p>
+                <p>Properties :</p>
+                <div>
+                    <ul class="prop-list">
+                    <% player.properties.map((property) => { %>
+                            <li>
+                                <%= property.propName %>
+                            </li>
+                        <% }) %>
+                    </ul>
+                </div>
+                <div class="editBtn">
+                    <a href="/monopoly/<%=player["_id"] %>/edit">
+                        <button>
+                            Edit
+                        </button>
+                    </a>
+                    <form action="/monopoly/<%=player["_id"]; %>?_method=DELETE" method="POST">
+                        <input type="submit" value="DELETE"/>
+                    </form>
+                </div>
             </div>
         <% }) %>
     </ul>
+    </div>
+    <button class="newPlayerBtn">
+        <a href="monopoly/new">Add Player</a>
+    </button>
 </body>
 </html>
