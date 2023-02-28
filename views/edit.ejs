@@ -6,34 +6,45 @@
 </head>
 <body>
     <form action="/monopoly/<%= monopoly["_id"] %>?_method=PUT" method="POST">
-        Name: <input type="text" name="name" value="<%= monopoly.name %>"><br />
-        Piece: <input type="text" name="piece" value="<%= monopoly.piece %>"><br />
-        Properties: 
-        <ul>
-            <% monopoly.properties.map((ownedProp) => { %>
-                <li>
-                    <%= ownedProp.propName%>
-                </li>
-            <% }) %>
-        </ul>
+    <div class="edit-container">
+        <div class="edit-name">
+            Name: <input type="text" name="name" value="<%= monopoly.name %>">
+        </div>
+        <div class="edit-piece">
+            Piece: <input type="text" name="piece" value="<%= monopoly.piece %>">
+        </div>
+        
+        <div class="edit-ownedProps">
+            Properties: 
+            <ul>
+                <% monopoly.properties.map((ownedProp) => { %>
+                    <li>
+                        <%= ownedProp.propName%>
+                    </li>
+                <% }) %>
+            </ul>
+        </div>
         Add New Properties:
-        <div class="properties">
             <% propertyList.map((property) => { %>
                 <% if(monopoly.properties.find((prop) => { return prop.propName === property.propName})) { %>
-                    <%= property.propName %>
+                    <div class="<%= property.color %>">
                     <input type="checkbox" 
                     name="purchase_<%=property.propName%>" 
-                    class="<% property.color %>" checked>
+                    class="<%= property.color %>" id="<%=property.propName%>" checked>
+                    <label for="<%=property.propName%>"><%=property.propName%></label>
+                    </div>
                 <% } else { %>
-                    <%= property.propName %>
+                    <div class="<%= property.color %>">
                     <input type="checkbox" 
                     name="purchase_<%=property.propName%>"
-                    class="<% property.color %>">
+                    id="<%=property.propName%>">
+                    <label for="<%=property.propName%>"><%=property.propName%></label>
+                    </div>
                 <% } %>
             <% }) %>
-        </div>
     <br/>
     <input type="submit" name="" value="Submit Changes"/>
+    </div>
     </form>
 </body>
 </html>

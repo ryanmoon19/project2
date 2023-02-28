@@ -6,12 +6,12 @@
 </head>
 <body>
     <div class="index-container">
-    <h1>Monopoly</h1>
+    <h1 class="index-title">Monopoly Player Index</h1>
     <ul class="players-container">
         <% monopoly.map((player) => { %>
             <div class="player-card">
                 <div class="name">
-                    <a href="/monopoly/<%= player._id%>">
+                    <a href="/monopoly/<%= player._id%>" class="name-button">
                         <button>
                         <%=player.name%>
                     </button>
@@ -20,13 +20,15 @@
                 <p class="piece">Piece: <%=player.piece%></p>
                 <p class="money"> Money: <%=player.money%></p>
                 <p>Properties :</p>
-                <ul class="prop-list">
-                <% player.properties.map((property) => { %>
-                        <li>
-                            <%= property.propName %>
-                        </li>
-                    <% }) %>
+                <div>
+                    <ul class="prop-list">
+                    <% player.properties.map((property) => { %>
+                            <li>
+                                <%= property.propName %>
+                            </li>
+                        <% }) %>
                     </ul>
+                </div>
                 <div class="editBtn">
                     <a href="/monopoly/<%=player["_id"] %>/edit">
                         <button>

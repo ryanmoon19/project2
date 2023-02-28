@@ -15,19 +15,19 @@ module.exports = [
 		propName: 'Oriental Avenue',
 		isPurchased: false,
 		value: 0,
-		color: 'section_Light Blue',
+		color: 'section_Light-Blue',
 	},
 	{
 		propName: 'Vermont Avenue',
 		isPurchased: false,
 		value: 0,
-		color: 'section_Light Blue',
+		color: 'section_Light-Blue',
 	},
 	{
 		propName: 'Connecticut Avenue',
 		isPurchased: false,
 		value: 0,
-		color: 'section_Light Blue',
+		color: 'section_Light-Blue',
 	},
 	{
 		propName: 'St. Charles Place',
