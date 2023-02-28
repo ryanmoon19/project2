@@ -8,10 +8,10 @@
     <form action="/monopoly/<%= monopoly["_id"] %>?_method=PUT" method="POST">
     <div class="edit-container">
         <div class="edit-name">
-            Name: <input type="text" name="name" value="<%= monopoly.name %>">
+            <label for="<%=monopoly.name%>">Name: </label><input type="text" name="name" value="<%= monopoly.name %>">
         </div>
         <div class="edit-piece">
-            Piece: <input type="text" name="piece" value="<%= monopoly.piece %>">
+            <label for="<%=monopoly.piece%>">Piece: </label><input type="text" name="piece" value="<%= monopoly.piece %>">
         </div>
         
         <div class="edit-ownedProps">
@@ -25,23 +25,27 @@
             </ul>
         </div>
         Add New Properties:
+        <div class="loaded-props">
             <% propertyList.map((property) => { %>
                 <% if(monopoly.properties.find((prop) => { return prop.propName === property.propName})) { %>
                     <div class="<%= property.color %>">
-                    <input type="checkbox" 
-                    name="purchase_<%=property.propName%>" 
-                    class="<%= property.color %>" id="<%=property.propName%>" checked>
-                    <label for="<%=property.propName%>"><%=property.propName%></label>
+                        <input type="checkbox" 
+                        name="purchase_<%=property.propName%>" 
+                        class="<%= property.color %>" id="<%=property.propName%>" checked>
+                        <label for="<%=property.propName%>"><%=property.propName%></label> 
+                        <p>Value: <%= property.value %></p>
                     </div>
                 <% } else { %>
                     <div class="<%= property.color %>">
-                    <input type="checkbox" 
-                    name="purchase_<%=property.propName%>"
-                    id="<%=property.propName%>">
-                    <label for="<%=property.propName%>"><%=property.propName%></label>
+                        <input type="checkbox" 
+                        name="purchase_<%=property.propName%>"
+                        id="<%=property.propName%>">
+                        <label for="<%=property.propName%>"><%=property.propName%></label>
+                        <p>Value: <%= property.value %></p>
                     </div>
                 <% } %>
             <% }) %>
+        </div>
     <br/>
     <input type="submit" name="" value="Submit Changes"/>
     </div>
