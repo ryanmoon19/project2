@@ -4,9 +4,22 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="/style.css">
+    <title>Show Page</title>
 </head>
-<body>
-    
+<body class="showBody">
+    <div class="showDiv">
+    <h1><%=monopoly.name%></h1>
+    <h3>Piece: <%=monopoly.piece%></h3>
+    <h4>Money: $<%=monopoly.money%></h4>
+    <h4>Properties: </h4>
+    <ul>
+        <li>Property: <%=monopoly.propeties%></li>
+        <li>Value: <%=monopoly.properties.property%></li>
+    </ul>
+    </br>
+    <button>
+        <a href="/monopoly">Back to Home Page</a>
+    </button>
 </body>
 </html>
