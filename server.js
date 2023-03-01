@@ -25,7 +25,7 @@ app.use(bp.urlencoded({ extended: true }));
 // })
 
 // INDEX ROUTE
-app.get('/monopoly', (req, res) => {
+app.get('/', (req, res) => {
 	monopolySchema.find({}, (err, displayAllmonopoly) => {
 		res.render('index.ejs', { monopoly: displayAllmonopoly });
 	});
