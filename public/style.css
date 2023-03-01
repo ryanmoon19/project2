@@ -10,11 +10,6 @@ body{
     background-size: contain;
 }
 
-.showBody h1 {
-    font-family: fantasy;
-    font-size: 80px;
-}
-
 .showDiv {
     text-align: center;
     margin-top: 15%;
@@ -241,5 +236,21 @@ form {
     font-family: fantasy;
 }
 
+.showBody h3 {
+    font-size: 300%;
+}
+
+.showBody h3 {
+    font-size: 200%;
+}
+
+.showBody h1 {
+    font-family: fantasy;
+    font-size: 80px;
+}
+
+.showBody button{
+    width: 30%;
+}
 
 
