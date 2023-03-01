@@ -4,17 +4,22 @@
     <%- include ('./partials/head.ejs') %>
     <title>Document</title>
 </head>
-<body>
-        <h1>Add Player</h1>
+<body class="newBody">
+    <div class="newDiv">
+    
+    <h1>Add Player</h1>
         
         <form action="/monopoly" method="POST">
+        <div class="newPage">
             Name: <input type="text" name="name" /><br/>
             Piece: <input type="text" name="piece" /><br/>
             Money: <input type="number" name="money"/><br/>
-            Properties
-            Property Name: <input type="text" name="propName"/><br/>
+            <!-- Properties -->
+            <!-- Property Name: <input type="text" name="propName"/><br/> -->
             <!-- Property Value: <input type="number" name="value"/><br/> -->
-            <input type="submit" value="Create monopoly"/>
+            <input type="submit" value="Create"/>
         </form>
+    </div>
+    </div>
 </body>
 </html>
