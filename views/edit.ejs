@@ -5,7 +5,7 @@
     <title>Document</title>
 </head>
 <body class="editBody">
-    <form action="/?_method=PUT" method="POST">
+    <form action="/<%= monopoly["_id"] %>?_method=PUT" method="POST">
     <div class="edit-container">
         <div class="edit-name">
             <label for="<%=monopoly.name%>">Name: </label><input type="text" name="name" value="<%= monopoly.name %>">

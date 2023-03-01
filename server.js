@@ -44,7 +44,7 @@ app.get('/monopoly/:id', (req, res) => {
 });
 
 // EDIT ROUTE
-app.get('/monopoly/:id/edit', (req, res) => {
+app.get('/:id/edit', (req, res) => {
 	monopolySchema.findById(req.params.id, (err, editMonopoly) => {
 		res.render('edit.ejs', {
 			monopoly: editMonopoly,
