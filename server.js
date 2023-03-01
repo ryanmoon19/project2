@@ -3,6 +3,7 @@ const app = express();
 const mongoose = require('mongoose');
 const methodOverride = require('method-override');
 const bp = require('body-parser');
+const PORT = process.env.PORT || 3000;
 
 require('dotenv').config();
 const monopolySchema = require('./models/monopolySchema.js');
@@ -109,7 +110,7 @@ mongoose.connect(process.env.MONGODB, () => {
 });
 
 // LISTENER
-app.listen(3000, () => {
+app.listen(PORT, () => {
 	console.log('listening...');
 });
 
