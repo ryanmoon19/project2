@@ -25,7 +25,7 @@ app.use(bp.urlencoded({ extended: true }));
 // })
 
 // INDEX ROUTE
-app.get('/', (req, res) => {
+app.get('/monopoly', (req, res) => {
 	monopolySchema.find({}, (err, displayAllmonopoly) => {
 		res.render('index.ejs', { monopoly: displayAllmonopoly });
 	});
@@ -44,7 +44,7 @@ app.get('/monopoly/:id', (req, res) => {
 });
 
 // EDIT ROUTE
-app.get('/:id/edit', (req, res) => {
+app.get('/monopoly/:id/edit', (req, res) => {
 	monopolySchema.findById(req.params.id, (err, editMonopoly) => {
 		res.render('edit.ejs', {
 			monopoly: editMonopoly,
@@ -101,6 +101,11 @@ app.delete('/monopoly/:id', (req, res) => {
 			res.redirect('/monopoly');
 		}
 	});
+});
+
+// route back to index
+app.get('/', (req, res)=> {
+    res.redirect('/monopoly')
 });
 
 // connection to mongodb
